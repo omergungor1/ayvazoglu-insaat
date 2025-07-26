@@ -125,9 +125,9 @@ const Header = () => {
                                     <Menu className="h-6 w-6" />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                            <SheetContent side="right" className="w-[300px] sm:w-[400px] h-full overflow-y-auto">
                                 <SheetTitle className="sr-only">Menü</SheetTitle>
-                                <div className="flex flex-col space-y-4 mt-8 px-4">
+                                <div className="flex flex-col space-y-4 mt-8 px-4 pb-8">
                                     {navigationItems.map((item) => (
                                         <div key={item.name}>
                                             <a
