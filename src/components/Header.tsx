@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Menu, Phone, MessageCircle } from "lucide-react";
 
@@ -126,12 +126,13 @@ const Header = () => {
                                 </Button>
                             </SheetTrigger>
                             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                                <div className="flex flex-col space-y-4 mt-8">
+                                <SheetTitle className="sr-only">Menü</SheetTitle>
+                                <div className="flex flex-col space-y-4 mt-8 px-4">
                                     {navigationItems.map((item) => (
                                         <div key={item.name}>
                                             <a
                                                 href={item.href}
-                                                className="block text-lg font-medium text-gray-900 hover:text-orange-600"
+                                                className="block text-lg font-medium text-gray-900 hover:text-orange-600 py-2"
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                             >
                                                 {item.name}
@@ -142,7 +143,7 @@ const Header = () => {
                                                         <a
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            className="block text-sm text-gray-600 hover:text-orange-600"
+                                                            className="block text-sm text-gray-600 hover:text-orange-600 py-1"
                                                             onClick={() => setIsMobileMenuOpen(false)}
                                                         >
                                                             {subItem.name}
