@@ -92,7 +92,7 @@ export default function AboutPage() {
                             <p className="text-gray-700 leading-relaxed mb-6">
                                 Ayvazoğlu inşaat bursada kurulmuş köklü bir inşaat firmasıdır. Yılların bilgi birikimi ile
                                 çeşitli inşaat hizmetleri vermekteyiz. Özellikle toptan ve parakende inşaat malzemesi satışı
-                                yapmaktayız. Hemen her türlü inşaat malzemesi tedarik ve satışını yapıyoruz. Bununla birlikte
+                                yapmaktayız. Hemen hemen her türlü inşaat malzemesi tedarik ve satışını yapıyoruz. Bununla birlikte
                                 inşaat taahhüt ve anahtar teslim projeler yapmaktayız.
                             </p>
 

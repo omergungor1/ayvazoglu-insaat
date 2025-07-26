@@ -4,143 +4,115 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-    Package,
-    Truck,
-    Shield,
+    Home,
+    Building2,
+    Paintbrush,
     CheckCircle,
+    Clock,
     Award,
     Users,
     Phone,
     MessageCircle,
-    Star
+    Palette,
+    Sparkles,
+    Wrench
 } from "lucide-react";
 
-export default function BrickCementIronPage() {
-    const products = [
+export default function InteriorExteriorApplicationsPage() {
+    const services = [
         {
-            icon: Package,
-            title: "Tuğla Çeşitleri",
-            description: "Farklı boyut ve özelliklerde tuğla ürünleri",
+            icon: Home,
+            title: "İç Mekan Uygulamaları",
+            description: "Konut ve ofis iç mekan uygulama hizmetleri",
             features: [
-                "Tuğla",
-                "İzotuğla",
-                "Gazbeton blok",
-                "Bims blok",
-                "Ateş tuğlası"
+                "İç duvar boyama",
+                "Tavan uygulamaları",
+                "Zemin kaplamaları",
+                "Dekoratif sıva",
+                "İç mekan dekorasyon"
             ]
         },
         {
-            icon: Shield,
-            title: "Çimento Türleri",
-            description: "Kaliteli çimento çeşitleri",
+            icon: Building2,
+            title: "Dış Cephe Uygulamaları",
+            description: "Bina dış cephe uygulama ve kaplama işleri",
             features: [
-                "Portland çimentosu",
-                "Çok amaçlı çimento",
-                "Sülfat dirençli çimento",
-                "Beyaz çimento",
-                "Puzolanik çimento"
+                "Dış cephe boyama",
+                "Mantolama sistemleri",
+                "Cephe kaplama",
+                "Dış cephe sıva",
+                "Cephe dekorasyonu"
             ]
         },
         {
-            icon: Truck,
-            title: "Demir ve Çelik",
-            description: "İnşaat demiri ve çelik ürünleri",
+            icon: Paintbrush,
+            title: "Boya ve Kaplama",
+            description: "Profesyonel boya ve kaplama uygulamaları",
             features: [
-                "İnşaat demiri (8-32mm)",
-                "Hasır çelik",
-                "Çelik nervürlü",
-                "Düz demir",
-                "Köşebent"
+                "İç mekan boyama",
+                "Dış cephe boyama",
+                "Özel kaplama uygulamaları",
+                "Dekoratif boya",
+                "Su bazlı boya"
             ]
         },
         {
-            icon: Award,
-            title: "Hazır Beton",
-            description: "Kaliteli hazır beton çeşitleri",
+            icon: Wrench,
+            title: "Onarım ve Bakım",
+            description: "Mekan onarım ve bakım hizmetleri",
             features: [
-                "C25 hazır beton",
-                "C30 hazır beton",
-                "C35 hazır beton",
-                "C40 hazır beton",
-                "Özel betonlar"
-            ]
-        },
-        {
-            icon: Package,
-            title: "Kum ve Agregat",
-            description: "Farklı boyutlarda kum ve agregat ürünleri",
-            features: [
-                "İnce kum (0-2mm)",
-                "Orta kum (2-4mm)",
-                "Kalın kum (4-8mm)",
-                "Çakıl (8-16mm)",
-                "Agregat (16-32mm)"
-            ]
-        },
-        {
-            icon: Truck,
-            title: "Sıhhi Tesisat ve PVC Boru",
-            description: "Su ve kanalizasyon tesisat malzemeleri",
-            features: [
-                "PVC su borusu (20-110mm)",
-                "PVC kanalizasyon borusu",
-                "Sıhhi tesisat bağlantıları",
-                "Vana ve musluk çeşitleri",
-                "Tesisat ekipmanları"
-            ]
-        },
-        {
-            icon: Shield,
-            title: "Kireç Ürünleri",
-            description: "İnşaat ve sıva işleri için kireç çeşitleri",
-            features: [
-                "Sönmüş kireç",
-                "Toz kireç",
-                "Hazır sıva",
-                "Kireç harcı"
+                "Cephe onarımı",
+                "İç mekan onarımı",
+                "Periyodik bakım",
+                "Koruyucu uygulamalar",
+                "Yenileme işleri"
             ]
         }
     ];
 
-    const additionalProducts = [
+    const processSteps = [
         {
-            title: "Alçı ve Sıva",
-            description: "İç mekan sıva ve alçı malzemeleri"
+            step: "01",
+            title: "Keşif ve Planlama",
+            description: "Mevcut durumu analiz ediyoruz"
         },
         {
-            title: "Çimento Katkıları",
-            description: "Beton katkı malzemeleri"
+            step: "02",
+            title: "Tasarım ve Teklif",
+            description: "Uygulama planı ve teklif hazırlıyoruz"
         },
         {
-            title: "İnşaat Kimyasalları",
-            description: "Yapıştırıcı ve dolgu malzemeleri"
+            step: "03",
+            title: "Uygulama",
+            description: "Profesyonel ekip ile uygulama yapıyoruz"
         },
         {
-            title: "Tesisat Ekipmanları",
-            description: "Sıhhi tesisat tamamlayıcı ürünleri"
+            step: "04",
+            title: "Kontrol ve Teslim",
+            description: "Kalite kontrolü sonrası teslim ediyoruz"
         }
     ];
 
     const advantages = [
         {
             icon: Award,
-            title: "Kaliteli Ürünler",
-            description: "Sadece kaliteli ve güvenilir markaların ürünlerini satıyoruz"
+            title: "Kaliteli Malzemeler",
+            description: "Sadece kaliteli ve güvenilir malzemeler kullanıyoruz"
         },
         {
-            icon: Truck,
-            title: "Hızlı Teslimat",
-            description: "Siparişlerinizi en kısa sürede adresinize teslim ediyoruz"
+            icon: Clock,
+            title: "Hızlı Uygulama",
+            description: "Uygulamalarınızı kısa sürede tamamlıyoruz"
         },
         {
             icon: Users,
-            title: "Teknik Destek",
-            description: "Ürün seçimi ve uygulama konusunda teknik destek veriyoruz"
+            title: "Uzman Ekip",
+            description: "Deneyimli uygulama ekibimizle çalışıyoruz"
         },
         {
-            icon: CheckCircle,
-            title: "Uygun Fiyat",
-            description: "Toptan alım avantajlarıyla uygun fiyatlarla sunuyoruz"
+            icon: Sparkles,
+            title: "Modern Tasarım",
+            description: "Güncel tasarım trendlerini uyguluyoruz"
         }
     ];
 
@@ -153,42 +125,42 @@ export default function BrickCementIronPage() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Tuğla, Çimento, Demir
+                            İç-Dış Mekan Uygulamaları
                         </h1>
                         <p className="text-xl text-orange-100">
-                            Temel yapı malzemeleri - Kaliteli ürünler, uygun fiyatlar
+                            İç ve dış mekan uygulama hizmetlerini profesyonelce yapıyoruz
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Products */}
+            {/* Services */}
             <section className="py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Ürün Kategorilerimiz
+                            Mekan Uygulama Hizmetlerimiz
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Temel yapı malzemeleri kategorilerimiz
+                            Kapsamlı iç ve dış mekan uygulama hizmetleri
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {products.map((product, index) => (
+                        {services.map((service, index) => (
                             <Card key={index} className="hover:shadow-lg transition-shadow">
                                 <CardHeader>
                                     <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                                        <product.icon className="h-6 w-6 text-orange-600" />
+                                        <service.icon className="h-6 w-6 text-orange-600" />
                                     </div>
-                                    <CardTitle className="text-xl">{product.title}</CardTitle>
+                                    <CardTitle className="text-xl">{service.title}</CardTitle>
                                     <CardDescription className="text-gray-600">
-                                        {product.description}
+                                        {service.description}
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="space-y-2">
-                                        {product.features.map((feature, featureIndex) => (
+                                        {service.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-600">
                                                 <CheckCircle className="h-4 w-4 text-orange-500" />
                                                 <span>{feature}</span>
@@ -202,30 +174,27 @@ export default function BrickCementIronPage() {
                 </div>
             </section>
 
-            {/* Additional Products */}
+            {/* Process Steps */}
             <section className="py-16 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Diğer Ürünlerimiz
+                            Uygulama Sürecimiz
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Tamamlayıcı yapı malzemeleri
+                            Mekan uygulamalarımızda izlediğimiz adımlar
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {additionalProducts.map((product, index) => (
-                            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                                <CardHeader>
-                                    <CardTitle className="text-lg">{product.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <CardDescription className="text-gray-600">
-                                        {product.description}
-                                    </CardDescription>
-                                </CardContent>
-                            </Card>
+                        {processSteps.map((step, index) => (
+                            <div key={index} className="text-center">
+                                <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                    {step.step}
+                                </div>
+                                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                                <p className="text-gray-600">{step.description}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -236,10 +205,10 @@ export default function BrickCementIronPage() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Neden Bizim Ürünlerimizi Seçmelisiniz?
+                            Neden Mekan Uygulamalarımızı Seçmelisiniz?
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Kaliteli ürünler ve güvenilir hizmet
+                            Kaliteli hizmet ve güvenilir çözümler
                         </p>
                     </div>
 
@@ -259,15 +228,15 @@ export default function BrickCementIronPage() {
                 </div>
             </section>
 
-            {/* Quality Brands */}
+            {/* Special Services */}
             <section className="py-16 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Çalıştığımız Markalar
+                            Özel Mekan Uygulamalarımız
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Sadece kaliteli ve güvenilir markaların ürünlerini satıyoruz
+                            Özel ihtiyaçlarınıza yönelik mekan uygulama çözümleri
                         </p>
                     </div>
 
@@ -275,13 +244,13 @@ export default function BrickCementIronPage() {
                         <Card className="text-center hover:shadow-lg transition-shadow">
                             <CardHeader>
                                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Star className="h-8 w-8 text-orange-600" />
+                                    <Palette className="h-8 w-8 text-orange-600" />
                                 </div>
-                                <CardTitle>Çimento Markaları</CardTitle>
+                                <CardTitle>Dekoratif Uygulamalar</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="text-gray-600">
-                                    Çimsa, Akçansa, Nuh Çimento gibi güvenilir markaların ürünlerini satıyoruz.
+                                    Özel dekoratif boya ve kaplama uygulamaları ile mekanlarınıza değer katıyoruz.
                                 </CardDescription>
                             </CardContent>
                         </Card>
@@ -289,13 +258,13 @@ export default function BrickCementIronPage() {
                         <Card className="text-center hover:shadow-lg transition-shadow">
                             <CardHeader>
                                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Star className="h-8 w-8 text-orange-600" />
+                                    <Sparkles className="h-8 w-8 text-orange-600" />
                                 </div>
-                                <CardTitle>Demir Markaları</CardTitle>
+                                <CardTitle>Modern Tasarım</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="text-gray-600">
-                                    İsdemir, Kardemir, Erdemir gibi kaliteli demir üreticilerinin ürünlerini satıyoruz.
+                                    Güncel tasarım trendlerini kullanarak modern ve şık mekanlar oluşturuyoruz.
                                 </CardDescription>
                             </CardContent>
                         </Card>
@@ -303,13 +272,13 @@ export default function BrickCementIronPage() {
                         <Card className="text-center hover:shadow-lg transition-shadow">
                             <CardHeader>
                                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Star className="h-8 w-8 text-orange-600" />
+                                    <Award className="h-8 w-8 text-orange-600" />
                                 </div>
-                                <CardTitle>Tuğla Markaları</CardTitle>
+                                <CardTitle>Kalite Garantisi</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="text-gray-600">
-                                    Kaliteli yerli ve yabancı tuğla üreticilerinin ürünlerini satıyoruz.
+                                    Tüm mekan uygulamalarımızda kalite garantisi veriyoruz.
                                 </CardDescription>
                             </CardContent>
                         </Card>
@@ -321,10 +290,10 @@ export default function BrickCementIronPage() {
             <section className="py-16 bg-orange-600 text-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Ürünlerimiz Hakkında Bilgi Alın
+                        Mekan Uygulamanız İçin İletişime Geçin
                     </h2>
                     <p className="text-xl mb-8 text-orange-100">
-                        Tuğla, çimento ve demir ürünlerimiz için bizimle iletişime geçin
+                        İç ve dış mekan uygulamalarınız için uzman ekibimizle görüşün
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-orange-600">

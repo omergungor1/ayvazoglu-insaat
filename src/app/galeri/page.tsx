@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
     Phone,
     MessageCircle,
@@ -33,20 +34,12 @@ export default function GalleryPage() {
         }
     ];
 
-    const placeholderImages = [
-        { id: 1, title: "Konut Projesi 1", category: "Konut" },
-        { id: 2, title: "Konut Projesi 2", category: "Konut" },
-        { id: 3, title: "Ticari Yapı 1", category: "Ticari" },
-        { id: 4, title: "Ticari Yapı 2", category: "Ticari" },
-        { id: 5, title: "Tadilat Projesi 1", category: "Tadilat" },
-        { id: 6, title: "Tadilat Projesi 2", category: "Tadilat" },
-        { id: 7, title: "İzolasyon Projesi 1", category: "İzolasyon" },
-        { id: 8, title: "İzolasyon Projesi 2", category: "İzolasyon" },
-        { id: 9, title: "Konut Projesi 3", category: "Konut" },
-        { id: 10, title: "Ticari Yapı 3", category: "Ticari" },
-        { id: 11, title: "Tadilat Projesi 3", category: "Tadilat" },
-        { id: 12, title: "İzolasyon Projesi 3", category: "İzolasyon" }
-    ];
+    // Gerçek galeri resimleri
+    const galleryImages = Array.from({ length: 26 }, (_, index) => ({
+        id: index + 1,
+        src: `/assets/gallery/photo-${index + 1}.jpeg`,
+        alt: `Proje Fotoğrafı ${index + 1}`
+    }));
 
     return (
         <div className="min-h-screen">
@@ -111,20 +104,24 @@ export default function GalleryPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {placeholderImages.map((image) => (
-                            <Card key={image.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                                <div className="aspect-square bg-gray-200 flex items-center justify-center">
-                                    <div className="text-center">
-                                        <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                                        <p className="text-sm text-gray-500">{image.title}</p>
-                                        <span className="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded-full">
-                                            {image.category}
-                                        </span>
+                        {galleryImages.map((image) => (
+                            <Card key={image.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                                <div className="aspect-square relative overflow-hidden">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                                    />
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <ImageIcon className="h-8 w-8 text-white" />
+                                        </div>
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
-                                    <h3 className="font-semibold text-sm">{image.title}</h3>
-                                    <p className="text-xs text-gray-500 mt-1">{image.category} Projesi</p>
+                                    {/* Resim bilgileri kaldırıldı */}
                                 </CardContent>
                             </Card>
                         ))}

@@ -102,7 +102,7 @@ export default function ProductsPage() {
                             Ürün Kategorilerimiz
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Hemen her türlü inşaat malzemesi tedarik ve satışını yapıyoruz.
+                            Hemen hemen her türlü inşaat malzemesi tedarik ve satışını yapıyoruz.
                             Kaliteli ürünler ve uygun fiyatlarla hizmetinizdeyiz.
                         </p>
                     </div>

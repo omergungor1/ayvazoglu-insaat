@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Instagram, Facebook } from "lucide-react";
 
@@ -10,8 +11,14 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="space-y-4">
                         <div className="flex items-center space-x-2">
-                            <div className="h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">A</span>
+                            <div className="bg-white rounded-lg p-2">
+                                <Image
+                                    src="/assets/logo1.png"
+                                    alt="Ayvazoğlu İnşaat Logo"
+                                    width={40}
+                                    height={40}
+                                    className="h-10 w-auto"
+                                />
                             </div>
                             <span className="font-bold text-xl">Ayvazoğlu İnşaat</span>
                         </div>
@@ -19,11 +26,8 @@ const Footer = () => {
                             Bursa&apos;da kurulmuş köklü inşaat firması. Yılların bilgi birikimi ile çeşitli inşaat hizmetleri vermekteyiz.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors">
+                            <a href="https://www.instagram.com/ayvazogluinsaat?igsh=ZnhpcjVtdnZtbDZo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors">
                                 <Instagram className="h-5 w-5" />
-                            </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors">
-                                <Facebook className="h-5 w-5" />
                             </a>
                         </div>
                     </div>
@@ -47,7 +51,6 @@ const Footer = () => {
                             <li><a href="/urunler/tugla-cemo-demir" className="hover:text-orange-500 transition-colors">Tuğla, Çimento, Demir</a></li>
                             <li><a href="/urunler/izolasyon" className="hover:text-orange-500 transition-colors">İzolasyon Ürünleri</a></li>
                             <li><a href="/urunler/seramik-boya" className="hover:text-orange-500 transition-colors">Seramik, Boya vb.</a></li>
-                            <li><a href="/katalog" className="hover:text-orange-500 transition-colors">Katalog İndir</a></li>
                         </ul>
                     </div>
 

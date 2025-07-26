@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
@@ -33,7 +34,6 @@ const Header = () => {
                 { name: "Seramik, Boya vb.", href: "/urunler/seramik-boya" },
             ]
         },
-        { name: "Katalog", href: "/katalog" },
         { name: "Galeri", href: "/galeri" },
         { name: "Blog", href: "/blog" },
         { name: "İletişim", href: "/iletisim" },
@@ -46,9 +46,13 @@ const Header = () => {
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center space-x-2">
-                            <div className="h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">A</span>
-                            </div>
+                            <Image
+                                src="/assets/logo1.png"
+                                alt="Ayvazoğlu İnşaat Logo"
+                                width={40}
+                                height={40}
+                                className="h-10 w-auto"
+                            />
                             <span className="font-bold text-xl text-gray-900">Ayvazoğlu İnşaat</span>
                         </Link>
                     </div>
