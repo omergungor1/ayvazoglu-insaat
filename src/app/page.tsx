@@ -1,103 +1,228 @@
-import Image from "next/image";
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Building2,
+  Truck,
+  Hammer,
+  Paintbrush,
+  Phone,
+  MessageCircle,
+  CheckCircle,
+  Award,
+  Users,
+  Clock
+} from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
+  const services = [
+    {
+      icon: Building2,
+      title: "Anahtar Teslim Projeler",
+      description: "Konut, ticari ve endüstriyel yapıların anahtar teslim projelerini gerçekleştiriyoruz.",
+      href: "/hizmetlerimiz/anahtar-teslim"
+    },
+    {
+      icon: Hammer,
+      title: "Taahhüt Hizmetleri",
+      description: "İnşaat taahhüt işlerinde uzman ekibimizle hizmet veriyoruz.",
+      href: "/hizmetlerimiz/tahhut"
+    },
+    {
+      icon: Paintbrush,
+      title: "Tadilat ve Yenileme",
+      description: "Mevcut yapıların tadilat ve yenileme işlerini profesyonelce yapıyoruz.",
+      href: "/hizmetlerimiz/tadilat"
+    },
+    {
+      icon: Truck,
+      title: "İnşaat Malzemeleri",
+      description: "Toptan ve parakende inşaat malzemesi satışı yapıyoruz.",
+      href: "/urunler"
+    }
+  ];
+
+  const features = [
+    {
+      icon: Award,
+      title: "Kaliteli Hizmet",
+      description: "Yılların deneyimi ile kaliteli hizmet sunuyoruz."
+    },
+    {
+      icon: Users,
+      title: "Uzman Ekip",
+      description: "Deneyimli ve uzman ekibimizle çalışıyoruz."
+    },
+    {
+      icon: Clock,
+      title: "Zamanında Teslim",
+      description: "Projelerimizi zamanında teslim ediyoruz."
+    },
+    {
+      icon: CheckCircle,
+      title: "Müşteri Memnuniyeti",
+      description: "Müşteri memnuniyeti odaklı çalışıyoruz."
+    }
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-orange-600 to-orange-700 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Ayvazoğlu İnşaat
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-orange-100">
+              Bursa&apos;da köklü inşaat firması. Toptan ve parakende inşaat malzemesi satışı,
+              taahhüt hizmetleri ve anahtar teslim projeler.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild className="bg-white text-orange-600 hover:bg-gray-100">
+                <a href="tel:+905518355670" className="flex items-center space-x-2">
+                  <Phone className="h-5 w-5" />
+                  <span>Hemen Ara</span>
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-orange-600">
+                <a href="https://wa.me/905518355670" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+                  <MessageCircle className="h-5 w-5" />
+                  <span>WhatsApp</span>
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Hakkımızda
+            </h2>
+            <p className="text-lg text-gray-600">
+              Ayvazoğlu inşaat Bursa&apos;da kurulmuş köklü bir inşaat firmasıdır. Yılların bilgi birikimi ile
+              çeşitli inşaat hizmetleri vermekteyiz. Özellikle toptan ve parakende inşaat malzemesi satışı
+              yapmaktayız. Hemen her türlü inşaat malzemesi tedarik ve satışını yapıyoruz. Bununla birlikte
+              inşaat taahhüt ve anahtar teslim projeler yapmaktayız.
+            </p>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <Card key={index} className="text-center border-0 shadow-lg">
+                <CardHeader>
+                  <div className="mx-auto w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                    <feature.icon className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <CardTitle className="text-lg">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Hizmetlerimiz
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              İnşaat sektöründe kapsamlı hizmetler sunuyoruz.
+              Anahtar teslim projelerden malzeme satışına kadar her ihtiyacınız için yanınızdayız.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+                    <service.icon className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {service.description}
+                  </CardDescription>
+                  <Button variant="link" className="p-0 h-auto text-orange-600 hover:text-orange-700 mt-4">
+                    <a href={service.href}>Detayları Gör →</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="py-16 bg-orange-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Projeniz İçin Bizimle İletişime Geçin
+          </h2>
+          <p className="text-xl mb-8 text-orange-100">
+            İnşaat projeleriniz için uzman ekibimizle görüşün
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-orange-600">
+              <a href="tel:+905518355670" className="flex items-center space-x-2">
+                <Phone className="h-5 w-5" />
+                <span>+90 551 835 56 70</span>
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-orange-600">
+              <a href="https://wa.me/905518355670" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+                <MessageCircle className="h-5 w-5" />
+                <span>WhatsApp</span>
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Konumumuz</h2>
+            <p className="text-gray-600">Bursa&apos;da hizmet veriyoruz</p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1522.6980708646076!2d29.071371589114438!3d40.24472666313474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1753541218505!5m2!1str!2str"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
